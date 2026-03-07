@@ -1,3 +1,4 @@
-# CPSC304 Project - SafeSource
-## Brief Summary:
-Our Open-Source Dependency Risk & License Compliance Database aims to solve the problem of keeping track of legal obligations, security risks, and policy requirements when it comes to hundreds, if not thousands of open-source libraries (dependencies in this case), that are referenced in modern day software projects. Furthermore, offering potential solutions along the way as a form of remediation. In this case, the domain of this project would be logistics, version control, legality and software management.
+# team_91
+# team_91
+
+# test
