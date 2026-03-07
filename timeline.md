@@ -1,4 +1,4 @@
-#### Specification
+## 1. Specification
 - Populate each table with sufficient items to demonstrate functionality (1-2 days)
 - Select relation(s) to preform operation(s) on:
     - Insert
@@ -37,22 +37,36 @@
 - User-friendliness
     - The application is designed for someone who has no knowledge of Computer Science. The interaction and required inputs are reasonable for a non-Computer Scientists (e.g., the user is not required to input a condition such as attributeName <op> value to do a search). The application is designed in a way that is reasonable for users (e.g., having everything on a really long page is not reasonable).
 
-#### Timeline 
-### While tasks are assigned, the assignment is flexible as we don't have a definite estimate as to how difficult each task will be until we start working on them. Furthermore some tasks will require collaboration. 
-Currently: 
-- Fix DDL issues
-- Create the entity tables
-- Write `INSERT` scripts for at least 5 rows per table so queries return interesting results
-- Verify all FK constraints resolve and no constraint errors appear
-To-do: 
-- Setup backend, Node.js + Express most likely (2 week) | Assigned to all
-    - Write up specification (i.e., identify input/output partitions, errors, etc...) (4 days) | Assigned to all
-    - Implement basic CRUD endpoints for each major entity (3 days) | Split major entities into 3 portions and each person does 1 portion
-    - Test basic endpoints (2 days) | Each person creates tests for the endpoints they implement
-    - Implement endpoints for hard-coded queries (Aggregation, Nested Aggregation, Division) (3 days) | Same as with basic CRUD endpoints
-    - Test advanced endpoints (2 days) | Same as with basic endpoint testing
-- Setup frontend, React probably (1.5 week) | Assigned to all
-    - Build views for core entities (Users, Software, Packages, Findings) (5 days) | Each person creates the views for their endpoints
-    - Wire up forms for insertion, updating, selecting, etc... (3 days) | Same as above
-    - Wire up Delete with cascade confirmation (3 days) | Same as above
+## 2. Timeline 
 
+Task assignments are flexible. All three members are expected to collaborate and help each other out depending on difficulty and progress. The goal is equal overall contribution.
+
+### Currently In Progress
+- Fix DDL issues and finalize entity tables
+- Write `INSERT` scripts for at least 5 rows per table so queries return interesting results
+- Verify all FK constraints resolve with no errors
+- Each member sets up Git config and makes at least one UBC GitHub commit
+- Each member runs the sample project locally and understands the file structure
+
+---
+
+### To-Do
+#### Setup Backend: Node.js + Express (~2 weeks) | All members
+- Write up specification (i.e., identify input/output partitions, errors, etc...) (4 days)
+- Implement basic CRUD endpoints (Insert, Update, Delete), split entities across members (3 days)
+- Test basic endpoints, each person creates tests for the endpoints they implement (2 days)
+- Implement endpoints for remaining queries (Selection, Projection, Join, Aggregation, Nested Aggregation, Division), split across members (4 days)
+- Test advanced endpoints (2 days)
+
+#### Setup Frontend: React (~1.5 week) | All members
+- Build views for core entities: Users, Software, Packages, Findings. Each person creates the views for their endpoints (5 days)
+- Wire up forms for Insert, Update, Selection, Projection, Join (3 days)
+- Wire up Delete with cascade confirmation + success/failure notifications (2 days)
+- UI polish: ensure no SQL syntax visible, usable by a non-CS person, reasonable layout (2 days)
+
+#### Final Polish + Submission (~1 week)
+- Add input sanitization to all routes (prevent SQL injection)
+- Verify SQL script drops, recreates, and reloads all tables cleanly
+- Ensure sufficient non-trivial data for all queries (enough rows for GROUP BY groups, Division to be meaningful, etc.)
+- Write Milestone 4 PDF (project description, schema changes, DB state screenshot, query index)
+- Full dry-run demo before Milestone 5
