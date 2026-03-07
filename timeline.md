@@ -1,0 +1,52 @@
+#### Specification
+- Populate each table with sufficient items to demonstrate functionality (1-2 days)
+- Select relation(s) to preform operation(s) on:
+    - Insert
+        - The user should be able to specify what values to insert. That is, do not limit the user to a particular set of values to insert. The user should be able to insert any value they want
+    - Update
+        - In this relation, the user should be able to update any number of non-primary key attributes
+    - Delete
+        - The user should be able to choose what values to delete. They can do this by specifying the primary key, selecting from a list of tuples, or using another reasonable method of your choice.
+    - Selection
+        - The user should be allowed to search for tuples using any number of AND and OR clauses and combinations of attributes. Conditions can be based on equality or (if you want) more complex operations (e.g., less than).
+    - Projection
+        - The user can choose any number of attributes to view from this relation. Non-selected attributes must not appear in the result.
+        - The user should be able to choose the order of the attributes in the answer. For example, if there is R(A, B, C), the user should be able to choose that the results should appear in the order of B, A, C. The order of the attributes cannot be changed on the client side; the query that gets sent to the database must fetch the tuples in the user-specified order.
+    - Join
+        - The user must provide at least one value to qualify in the WHERE clause (e.g., join the Customer and the Transaction relation to find the names and phone numbers of all customers who have purchased a specific item).
+- Aggregation with:
+    - Group By
+        - You must provide an interface (e.g., button, dropdown, etc.) for the user to execute the query.
+    - Having
+        - You must provide an interface (e.g., button, dropdown, etc.) for the user to execute the query.
+    - Division
+        - You must provide an interface (e.g., button, dropdown, etc.) for the user to execute the query.
+- Graphical User Interface (GUI)
+    - The GUI doesn’t need to be fancy, but at least a basic GUI is necessary. The GUI should be usable from the perspective of a non-computer scientist and should not include SQL syntax. If the project does not have a GUI (e.g., it is run through command line) or the GUI is severely broken, a penalty of 40% on the total value of the project grade will be applied.
+    - You cannot use a GUI generating tool.
+- Error handling
+    - The user receives notifications about user errors such as trying to insert a duplicate value, invalid input (e.g., invalid characters or an int when only strings are allowed), etc.
+- Drop, Recreate, and Reload Tables
+    - Groups should be able to use the .sql file submitted for Milestone 4 to drop, recreate, and reload tables.
+- Sufficient User Data
+    - Note that each of your queries must have some non-trivial answers. For example, division with only two products is trivial. Likewise, aggregation (GROUP BY) must produce a reasonable number of groups, and some groups must have more than one row. This means that you must insert enough data in your database using this script to ensure non-trivial query results.
+- User Notification
+    - The user will receive a success or failure notification upon the completion of an insert, update, delete action and will have a way to verify the action's effect on the database.
+- User-friendly query results
+    - Queries are designed to only return the data that is needed and in the right order if required. The client does not do any processing of the data such as filtering/sorting etc.
+- User-friendliness
+    - The application is designed for someone who has no knowledge of Computer Science. The interaction and required inputs are reasonable for a non-Computer Scientists (e.g., the user is not required to input a condition such as attributeName <op> value to do a search). The application is designed in a way that is reasonable for users (e.g., having everything on a really long page is not reasonable).
+
+#### Timeline
+Currently: 
+- Fix DDL issues
+- Create the entity tables
+- Write `INSERT` scripts for at least 5 rows per table so queries return interesting results
+- Verify all FK constraints resolve and no constraint errors appear
+To-do:
+- Setup backend, Node.js + Express most likely
+- Implement basic CRUD endpoints for each major entity
+- Test basic endpoints
+- Implement endpoints for hard-coded queries (Aggregation, Nested Aggregation, Division)
+- Setup frontend, React probably
+- Build views for core entities (Users, Software, Packages, Findings)
