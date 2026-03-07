@@ -37,16 +37,22 @@
 - User-friendliness
     - The application is designed for someone who has no knowledge of Computer Science. The interaction and required inputs are reasonable for a non-Computer Scientists (e.g., the user is not required to input a condition such as attributeName <op> value to do a search). The application is designed in a way that is reasonable for users (e.g., having everything on a really long page is not reasonable).
 
-#### Timeline
+#### Timeline 
+### While tasks are assigned, the assignment is flexible as we don't have a definite estimate as to how difficult each task will be until we start working on them. Furthermore some tasks will require collaboration. 
 Currently: 
 - Fix DDL issues
 - Create the entity tables
 - Write `INSERT` scripts for at least 5 rows per table so queries return interesting results
 - Verify all FK constraints resolve and no constraint errors appear
-To-do:
-- Setup backend, Node.js + Express most likely
-- Implement basic CRUD endpoints for each major entity
-- Test basic endpoints
-- Implement endpoints for hard-coded queries (Aggregation, Nested Aggregation, Division)
-- Setup frontend, React probably
-- Build views for core entities (Users, Software, Packages, Findings)
+To-do: 
+- Setup backend, Node.js + Express most likely (2 week) | Assigned to all
+    - Write up specification (i.e., identify input/output partitions, errors, etc...) (4 days) | Assigned to all
+    - Implement basic CRUD endpoints for each major entity (3 days) | Split major entities into 3 portions and each person does 1 portion
+    - Test basic endpoints (2 days) | Each person creates tests for the endpoints they implement
+    - Implement endpoints for hard-coded queries (Aggregation, Nested Aggregation, Division) (3 days) | Same as with basic CRUD endpoints
+    - Test advanced endpoints (2 days) | Same as with basic endpoint testing
+- Setup frontend, React probably (1.5 week) | Assigned to all
+    - Build views for core entities (Users, Software, Packages, Findings) (5 days) | Each person creates the views for their endpoints
+    - Wire up forms for insertion, updating, selecting, etc... (3 days) | Same as above
+    - Wire up Delete with cascade confirmation (3 days) | Same as above
+
