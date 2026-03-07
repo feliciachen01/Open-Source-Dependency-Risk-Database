@@ -1,6 +1,20 @@
 -- Used bookbiz.sql as a reference for the creation of this file
--- date attributes may have to be changed due to naming conflicts?
 -- ON UPDATE CASCADE is not natively supported by Oracle, we will provide alternatives
+drop table interacts;
+drop table uses;
+drop table dependson;
+drop table remediation;
+drop table licenserisk;
+drop table securityrisk;
+drop table findingseverity;
+drop table finding;
+drop table license;
+drop table packageversion;
+drop table packages;
+drop table auditevent;
+drop table audits;
+drop table users;
+drop table software;
 
 create table software
     (projectID int,
@@ -15,7 +29,7 @@ grant select on software to public;
 create table audits
     (auditID int,
     projectID int,
-    date date not null,
+    auditsDate date not null,
     primary key (auditID),
     foreign key (projectID) references software
     ON DELETE CASCADE);
@@ -24,10 +38,10 @@ grant select on audits to public;
 
 create table auditevent
     (projectID int,
-    date date not null,
+    eventDate date not null,
     type varchar(1024) not null,
     conductedBy varchar(1024) not null,
-    primary key (projectID, date),
+    primary key (projectID, eventDate),
     foreign key (projectID) references software
     ON DELETE CASCADE);
 
@@ -123,7 +137,7 @@ create table license
     (licenseID int,
     name varchar(1024) not null,
     type varchar(1024) not null,
-    requiresAttribution boolean not null, -- boolean may or may not be supported depending on UBC provided oracle version. 23c supports boolean
+    requiresAttribution number(1) not null,
     primary key (licenseID));
 
 grant select on license to public;
@@ -322,20 +336,20 @@ values(4, 1, 4);
 insert into dependson
 values(5, 1, 5);
 
-insert into license
-values(1, 'MIT License', 'Permissive', true);
+insert into license 
+values(1, 'MIT License', 'Permissive', 1);
 
-insert into license
-values(2, 'GPL v3', 'Copyleft', true);
+insert into license 
+values(2, 'GPL v3', 'Copyleft', 1);
 
-insert into license
-values(3, 'Apache 2.0', 'Permissive', true);
+insert into license 
+values(3, 'Apache 2.0', 'Permissive', 1);
 
-insert into license
-values(4, 'BSD 2-Clause', 'Permissive', true);
+insert into license 
+values(4, 'BSD 2-Clause', 'Permissive', 1);
 
-insert into license
-values(5, 'LGPL v2', 'Copyleft', false);
+insert into license 
+values(5, 'LGPL v2', 'Copyleft', 0);
 
 insert into uses
 values(1, 1, 1);
